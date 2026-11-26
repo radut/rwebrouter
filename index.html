@@ -28,23 +28,23 @@
       <a href="#faq">FAQ</a>
     </nav>
     <button class="theme" type="button" aria-label="Switch light or dark theme">☀</button>
-    <a class="btn small primary" href="#download">Coming soon</a>
+    <a class="btn small primary" href="#download">Download</a>
   </div>
 </header>
 
 <main>
 <section class="hero">
   <div class="wrap">
-    <span class="eyebrow"><b>●</b> Version 1.0.0 · Mac, Linux and iPhone coming soon</span>
+    <span class="eyebrow"><b>●</b> Version 1.0.0 · Mac and Linux now · iPhone coming soon</span>
     <h1>Every link opens in <span>the right browser.</span></h1>
     <p class="lede">rWebRouter is the default browser that is not a browser: ordered rules send each link to the
       browser, or the Chrome or Firefox profile, it belongs in. One config file for iPhone, Mac and Linux.</p>
     <div class="cta">
-      <button class="btn" type="button" disabled aria-disabled="true">Mac · Coming soon</button>
-      <button class="btn" type="button" disabled aria-disabled="true">Linux · Coming soon</button>
+      <a class="btn primary" href="https://github.com/radut/rwebrouter/releases/download/v1.0.0/rWebRouter-1.0.0-mac.zip">Download for Mac</a>
+      <a class="btn primary" href="https://github.com/radut/rwebrouter/releases/download/v1.0.0/rwebrouter_1.0.0_amd64.deb">Download for Linux (.deb)</a>
       <button class="btn" type="button" disabled aria-disabled="true">iPhone · Coming soon</button>
     </div>
-    <p class="platforms">macOS 15+ · Ubuntu 24.04 / Debian 13 (amd64) · iOS &amp; iPadOS 18+</p>
+    <p class="platforms">macOS 15+ · Ubuntu 24.04 / Debian 13 (amd64) · iOS &amp; iPadOS 18+ · <a href="https://github.com/radut/rwebrouter/releases">All releases</a></p>
 
     <div class="stage">
       <div class="stage-media">
@@ -156,8 +156,8 @@
         <p style="color:var(--muted)">No window of its own: it sits in the menu bar and passes links on. Hold
           <kbd><span class="mod">⌥</span>Option</kbd> while clicking a link to pick the browser yourself.</p>
         <ol>
-          <li>Open the zip and move <b>rWebRouter</b> to Applications. The first time, open it from
-            <b>System Settings → Privacy &amp; Security → Open Anyway</b> (the build is not notarized yet).</li>
+          <li>Open the zip and move <b>rWebRouter</b> to Applications, then start it. The app is signed with
+            Developer ID and notarized by Apple.</li>
           <li><b>Settings → General → Links on this Mac open with</b>: rWebRouter. macOS asks you to confirm.</li>
           <li><b>Browsers → +</b> lists every installed browser and its profiles; click <b>Add</b> on the ones you route to.</li>
           <li><b>Rules → +</b>: add your rules, drag to reorder, right-click a rule to add its opposite.</li>
@@ -177,7 +177,7 @@
           browser the rules choose, with <code>--profile-directory</code> for Chromium browsers and <code>-P</code> for
           Firefox. <b>rWebRouter Settings</b> (GTK 4) edits the rules.</p>
         <ol>
-          <li>Install the .deb: <code>sudo apt install ./rwebrouter_amd64.deb</code></li>
+          <li>Install the .deb: <code>sudo apt install ./rwebrouter_1.0.0_amd64.deb</code></li>
           <li><b>rWebRouter Settings → General → Make default</b>, or <code>rwebrouter make-default</code>.</li>
           <li><b>Browsers → Add browser</b> finds installed browsers (deb, snap, flatpak) and their profiles.</li>
           <li><b>Rules → +</b>, then <b>Test</b> shows the exact command a link would run.</li>
@@ -361,22 +361,21 @@ Google Chrome – Work (Profile 1, me@work.example) [google-chrome.desktop]</spa
     <div class="section-head">
       <p class="kicker">Download</p>
       <h2>Free, no account.</h2>
-      <p>Mac and Linux downloads are coming soon; the iPhone app too.</p>
+      <p>Mac and Linux downloads come from the project's <a href="https://github.com/radut/rwebrouter/releases">releases</a>. The iPhone app is coming soon.</p>
     </div>
     <div class="downloads">
       <div class="card">
         <h3>Mac · 1.0.0</h3>
-        <p class="note">macOS 15 or later, Apple silicon and Intel. Not notarized yet: the first time, open it from
-          System Settings → Privacy &amp; Security → <b>Open Anyway</b>, or run
-          <code>xattr -dr com.apple.quarantine /Applications/rWebRouter.app</code>.</p>
-        <button class="btn" type="button" disabled aria-disabled="true">Coming soon</button>
+        <p class="note">macOS 15 or later, Apple silicon and Intel. Signed with Developer ID and notarized by Apple:
+          open the zip, move rWebRouter to Applications and start it.</p>
+        <a class="btn primary" href="https://github.com/radut/rwebrouter/releases/download/v1.0.0/rWebRouter-1.0.0-mac.zip">Download for Mac (.zip)</a>
       </div>
       <div class="card">
         <h3>Linux · 1.0.0</h3>
         <p class="note">Ubuntu 24.04, Debian 13 or newer, amd64. Needs GTK 4 and libadwaita for the settings app.</p>
-        <div class="term snippet"><pre><span class="p">$ </span><span class="c">sudo apt install ./rwebrouter_amd64.deb</span>
+        <div class="term snippet"><pre><span class="p">$ </span><span class="c">sudo apt install ./rwebrouter_1.0.0_amd64.deb</span>
 <span class="p">$ </span><span class="c">rwebrouter make-default</span></pre></div>
-        <button class="btn" type="button" disabled aria-disabled="true">Coming soon</button>
+        <a class="btn primary" href="https://github.com/radut/rwebrouter/releases/download/v1.0.0/rwebrouter_1.0.0_amd64.deb">Download for Linux (.deb)</a>
       </div>
       <div class="card">
         <h3>iPhone</h3>
@@ -402,9 +401,9 @@ Google Chrome – Work (Profile 1, me@work.example) [google-chrome.desktop]</spa
       <details><summary>Is the Mac app a browser?</summary>
         <div><p>No. On the Mac it is a menu-bar app with no window: it receives links as the default browser and
           passes each one to the browser your rules choose. Settings opens from the menu-bar icon or with <kbd><span class="mod">⌘</span>,</kbd>.</p></div></details>
-      <details><summary>Why does macOS say it cannot check the app?</summary>
-        <div><p>The Mac build is ad-hoc signed and not notarized yet. Open it once from System Settings → Privacy &amp;
-          Security → Open Anyway, or remove the quarantine flag with <code>xattr -dr com.apple.quarantine /Applications/rWebRouter.app</code>.</p></div></details>
+      <details><summary>Is the Mac app signed?</summary>
+        <div><p>Yes. The Mac download is signed with Developer ID and notarized by Apple, so it opens like any other app
+          from the internet. Each release lists SHA-256 checksums in <code>SHA256SUMS</code>.</p></div></details>
       <details><summary>Which Linux systems are supported?</summary>
         <div><p>The .deb is for amd64 Ubuntu 24.04, Debian 13 and newer (it needs GTK 4 and libadwaita for the
           settings app). Browsers installed as deb, snap or flatpak are found. Other packages are not built yet.</p></div></details>
@@ -426,7 +425,8 @@ Google Chrome – Work (Profile 1, me@work.example) [google-chrome.desktop]</spa
     <h2>Stop copying links between browsers.</h2>
     <p style="color:var(--muted);font-size:18px;margin:0">Set your rules once; every link finds its browser.</p>
     <div class="cta">
-      <a class="btn primary" href="#how">See how it works</a>
+      <a class="btn primary" href="#download">Download</a>
+      <a class="btn" href="#how">See how it works</a>
     </div>
   </div>
 </section>
@@ -440,7 +440,7 @@ Google Chrome – Work (Profile 1, me@work.example) [google-chrome.desktop]</spa
         <p>Every link opens in the right browser.</p>
       </div>
       <div><h4>Product</h4><ul><li><a href="#how">How it works</a></li><li><a href="#howto">How to</a></li><li><a href="#keyboard">Keyboard</a></li><li><a href="#faq">FAQ</a></li></ul></div>
-      <div><h4>Download</h4><ul><li>Mac: coming soon</li><li>Linux (.deb): coming soon</li><li>iPhone: coming soon</li></ul></div>
+      <div><h4>Download</h4><ul><li><a href="https://github.com/radut/rwebrouter/releases/download/v1.0.0/rWebRouter-1.0.0-mac.zip">Mac</a></li><li><a href="https://github.com/radut/rwebrouter/releases/download/v1.0.0/rwebrouter_1.0.0_amd64.deb">Linux (.deb)</a></li><li>iPhone: coming soon</li><li><a href="https://github.com/radut/rwebrouter/releases">All releases</a></li></ul></div>
       <div><h4>About</h4><ul><li><a href="privacy.html">Privacy</a></li><li><a href="terms.html">Terms</a></li><li><a href="support.html">Support</a></li></ul></div>
     </div>
     <p class="fine">Screens show demo data only (example.com, *.work.example). No cookies; visits are counted with Umami (see <a href="privacy.html">Privacy</a>).</p>
