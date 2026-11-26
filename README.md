@@ -5,10 +5,11 @@ profile, it belongs in. One config file for iPhone, Mac and Linux. No accounts, 
 
 - Website: **https://radut.github.io/rwebrouter/** · [Privacy](https://radut.github.io/rwebrouter/privacy.html) ·
   [Terms](https://radut.github.io/rwebrouter/terms.html) · [Support](https://radut.github.io/rwebrouter/support.html)
-- Mac, Linux and iPhone: coming soon. Mac and Linux downloads will be published as releases of this repository.
+- Mac and Linux: download from [Releases](https://github.com/radut/rwebrouter/releases). iPhone: coming soon.
+- The website tracks nothing: no analytics, no cookies.
 
-This repository holds a generated copy of the website (served at https://radut.github.io/rwebrouter/) and, later,
-the releases. Questions and requests: [issues](https://github.com/radut/rwebrouter/issues).
+This repository holds a generated copy of the website (served at https://radut.github.io/rwebrouter/) and the
+releases. Questions and requests: [issues](https://github.com/radut/rwebrouter/issues).
 
 Chrome is a trademark of Google LLC. Firefox is a trademark of the Mozilla Foundation in the U.S. and other countries.
 Safari is a trademark of Apple Inc., registered in the U.S. and other countries. Microsoft Edge is a trademark of the
