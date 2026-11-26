@@ -1,0 +1,451 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>rWebRouter · every link opens in the right browser</title>
+<link rel="canonical" href="https://webrouter.radut.dev/">
+<meta name="description" content="rWebRouter sends every link to the browser, or browser profile, it belongs in. Ordered rules, one config file for iPhone, Mac and Linux. No accounts, no servers.">
+<meta name="color-scheme" content="dark light">
+<meta name="theme-color" content="#0a0f0e">
+<meta property="og:title" content="rWebRouter">
+<meta property="og:description" content="Every link opens in the right browser and profile, on iPhone, Mac and Linux.">
+<meta property="og:image" content="https://webrouter.radut.dev/media/mac/rules.webp">
+<link rel="icon" href="favicon.png" type="image/png">
+<link rel="stylesheet" href="style.css?v=3">
+<script>try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
+<script defer src="https://cloud.umami.is/script.js" data-website-id="c5b8f3b9-dc89-4e42-afc2-06ee72310179"></script></head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#"><img src="media/icon.png" alt="" width="28" height="28">rWebRouter</a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#how">How it works</a>
+      <a href="#platforms">Platforms</a>
+      <a href="#howto">How to</a>
+      <a href="#keyboard">Keyboard</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <button class="theme" type="button" aria-label="Switch light or dark theme">☀</button>
+    <a class="btn small primary" href="#download">Coming soon</a>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow"><b>●</b> Version 1.0.0 · Mac, Linux and iPhone coming soon</span>
+    <h1>Every link opens in <span>the right browser.</span></h1>
+    <p class="lede">rWebRouter is the default browser that is not a browser: ordered rules send each link to the
+      browser, or the Chrome or Firefox profile, it belongs in. One config file for iPhone, Mac and Linux.</p>
+    <div class="cta">
+      <button class="btn" type="button" disabled aria-disabled="true">Mac · Coming soon</button>
+      <button class="btn" type="button" disabled aria-disabled="true">Linux · Coming soon</button>
+      <button class="btn" type="button" disabled aria-disabled="true">iPhone · Coming soon</button>
+    </div>
+    <p class="platforms">macOS 15+ · Ubuntu 24.04 / Debian 13 (amd64) · iOS &amp; iPadOS 18+</p>
+
+    <div class="stage">
+      <div class="stage-media">
+        <figure id="v-rules" role="tabpanel" aria-labelledby="t-rules">
+          <div class="window"><img src="media/mac/rules.webp" width="1200" height="784" alt="Mac Settings, Rules tab: four ordered rules sending work sites to Chrome – Work and everything else to Firefox – Personal"></div>
+          <figcaption>Rules are checked top to bottom; the first one that matches picks the browser.</figcaption>
+        </figure>
+        <figure id="v-editor" role="tabpanel" aria-labelledby="t-editor" hidden>
+          <div class="window narrow"><img src="media/mac/rule-editor.webp" width="1040" height="960" alt="The rule editor: name, Applies to or Does not apply to, entries, and the browser to open"></div>
+          <figcaption>A rule: <em>Applies to</em> or <em>Does not apply to</em>, any number of entries, one browser.</figcaption>
+        </figure>
+        <figure id="v-profiles" role="tabpanel" aria-labelledby="t-profiles" hidden>
+          <div class="window narrow"><img src="media/mac/discover.webp" width="1040" height="960" alt="Discovered on this Mac: Chrome and Firefox with their Personal and Work profiles, each added with one click"></div>
+          <figcaption>Installed browsers and their Chrome and Firefox profiles, one click each.</figcaption>
+        </figure>
+        <figure id="v-menu" role="tabpanel" aria-labelledby="t-menu" hidden>
+          <div class="window menu"><img src="media/mac/menu.webp" width="630" height="448" alt="The menu-bar menu: recent links and where they went, Settings, Quit"></div>
+          <figcaption>On the Mac it lives in the menu bar: recent links and where each one went.</figcaption>
+        </figure>
+        <figure id="v-iphone" role="tabpanel" aria-labelledby="t-iphone" hidden>
+          <div class="phone"><video data-autoplay muted loop playsinline preload="none" poster="media/ios/ios-rule-editor.webp" width="600" height="1304" aria-label="iPhone: Settings, plus, a rule for *.work.example that opens in Chrome; Try it shows Applies; Save"><source src="media/ios/ios-rule.mp4" type="video/mp4"></video></div>
+          <figcaption>iPhone: a rule in a few taps, with a live test. Coming soon.</figcaption>
+        </figure>
+        <figure id="v-linux" role="tabpanel" aria-labelledby="t-linux" hidden>
+          <div class="window">
+            <video data-autoplay muted loop playsinline preload="none" poster="media/linux/tour-poster.jpg" width="770" height="670"
+                   aria-label="rWebRouter Settings on Linux: the Rules and Browsers tabs, then testing two links">
+              <source src="media/linux/tour.webm" type="video/webm">
+              <source src="media/linux/tour.mp4" type="video/mp4">
+            </video>
+          </div>
+          <figcaption>Linux: the same rules in a GTK app, and a Test tab that shows the exact command.</figcaption>
+        </figure>
+      </div>
+      <div class="feature-tabs" role="tablist" aria-label="Product tour">
+        <button role="tab" id="t-rules" aria-controls="v-rules" aria-selected="true">Rules</button>
+        <button role="tab" id="t-editor" aria-controls="v-editor" aria-selected="false" tabindex="-1">Rule editor</button>
+        <button role="tab" id="t-profiles" aria-controls="v-profiles" aria-selected="false" tabindex="-1">Profiles</button>
+        <button role="tab" id="t-menu" aria-controls="v-menu" aria-selected="false" tabindex="-1">Menu bar</button>
+        <button role="tab" id="t-iphone" aria-controls="v-iphone" aria-selected="false" tabindex="-1">iPhone</button>
+        <button role="tab" id="t-linux" aria-controls="v-linux" aria-selected="false" tabindex="-1">Linux</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="how" class="alt">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">How it works</p>
+      <h2>Your rules, checked in order.</h2>
+      <p>Make rWebRouter the default browser once. From then on every link you click, in mail, chat or a terminal,
+        goes through your rules, and the first rule that matches picks the browser.</p>
+    </div>
+    <div class="grid">
+      <div class="card"><span class="num">1</span><h3>A link arrives</h3><p>You click a link anywhere. The system hands it to rWebRouter, the default browser.</p></div>
+      <div class="card"><span class="num">2</span><h3>Rules decide</h3><p>Rules are checked top to bottom. Disabled rules, and rules whose browser is missing here, are skipped.</p></div>
+      <div class="card"><span class="num">3</span><h3>The browser opens it</h3><p>The link opens in the chosen browser, in the right Chrome, Edge, Brave or Firefox profile.</p></div>
+      <div class="card"><span class="num">4</span><h3>No match, no surprise</h3><p>Links that match no rule go to the browser you pick for that. On iPhone they can open right in the app.</p></div>
+    </div>
+
+    <div class="flow">
+      <div>
+        <h3>Example: work in Chrome, the rest in Firefox</h3>
+        <ol class="rules">
+          <li><span class="n">1</span><span class="what"><b>Work sites</b><span><span class="pill">Applies to</span>*.work.example, tickets.example.com</span></span><span class="to">→ Chrome – Work</span></li>
+          <li><span class="n">2</span><span class="what"><b>Video calls</b><span><span class="pill">Applies to</span>meet*.example.org</span></span><span class="to">→ Chrome</span></li>
+          <li><span class="n">3</span><span class="what"><b>Everything else</b><span><span class="pill not">Does not apply to</span>*.work.example</span></span><span class="to">→ Firefox – Personal</span></li>
+          <li class="fallback"><span class="n">·</span><span class="what"><b>Links that match no rule</b><span>the fallback browser</span></span><span class="to">→ Firefox</span></li>
+        </ol>
+        <p class="note" style="color:var(--muted);font-size:15px">A rule <em>applies to</em> the links its entries match, or,
+          set to <em>does not apply to</em>, to every link except those. Any one entry matching counts.</p>
+      </div>
+      <div class="table-scroll">
+        <h3>What an entry can match</h3>
+        <table class="kinds">
+          <thead><tr><th>Kind</th><th>Example</th><th>Matches</th></tr></thead>
+          <tbody>
+            <tr><td>Domain and subdomains</td><td>*.work.example</td><td>work.example and every subdomain</td></tr>
+            <tr><td>Host is</td><td>tickets.example.com</td><td>exactly that host</td></tr>
+            <tr><td>Host wildcard</td><td>meet*.example.org</td><td>hosts matching <code>*</code> and <code>?</code></td></tr>
+            <tr><td>URL contains</td><td>example.com/docs/team</td><td>any link containing the text</td></tr>
+            <tr><td>URL regex</td><td>^https://[a-z]+\.example\.net/</td><td>a regular expression on the full link</td></tr>
+          </tbody>
+        </table>
+        <p style="color:var(--muted);font-size:14px">All case-insensitive. Only web links (http, https) are routed.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="platforms">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">Platforms</p>
+      <h2>One config, three platforms.</h2>
+      <p>The iPhone, Mac and Linux apps read the same JSON file. Export it on one, import it on the others: a
+        “Chrome – Work” rule opens the work profile on the Mac and on Linux, and Chrome on the phone.</p>
+    </div>
+    <div class="tabs" id="platform-tabs" role="tablist" aria-label="Platform">
+      <button role="tab" id="tab-mac" aria-controls="p-mac" aria-selected="true">Mac</button>
+      <button role="tab" id="tab-linux" aria-controls="p-linux" aria-selected="false" tabindex="-1">Linux</button>
+      <button role="tab" id="tab-iphone" aria-controls="p-iphone" aria-selected="false" tabindex="-1">iPhone</button>
+    </div>
+
+    <div id="p-mac" role="tabpanel" aria-labelledby="tab-mac" class="platform">
+      <div>
+        <h3>A menu-bar router for macOS 15+</h3>
+        <p style="color:var(--muted)">No window of its own: it sits in the menu bar and passes links on. Hold
+          <kbd><span class="mod">⌥</span>Option</kbd> while clicking a link to pick the browser yourself.</p>
+        <ol>
+          <li>Open the zip and move <b>rWebRouter</b> to Applications. The first time, open it from
+            <b>System Settings → Privacy &amp; Security → Open Anyway</b> (the build is not notarized yet).</li>
+          <li><b>Settings → General → Links on this Mac open with</b>: rWebRouter. macOS asks you to confirm.</li>
+          <li><b>Browsers → +</b> lists every installed browser and its profiles; click <b>Add</b> on the ones you route to.</li>
+          <li><b>Rules → +</b>: add your rules, drag to reorder, right-click a rule to add its opposite.</li>
+          <li><b>Test</b>: type a link and see which rule and browser take it.</li>
+        </ol>
+      </div>
+      <div class="shots">
+        <div class="window"><img src="media/mac/general.webp" width="1200" height="837" alt="Mac Settings, General: default browser, links that match no rule, start at login, export and import"></div>
+        <div class="window"><img src="media/mac/test.webp" width="1200" height="837" alt="Mac Settings, Test: a work link opens in Chrome – Work because of the rule Work sites"></div>
+      </div>
+    </div>
+
+    <div id="p-linux" role="tabpanel" aria-labelledby="tab-linux" class="platform" hidden>
+      <div>
+        <h3>A desktop-entry router for Linux</h3>
+        <p style="color:var(--muted)"><code>rwebrouter</code> is registered as the default browser and starts the
+          browser the rules choose, with <code>--profile-directory</code> for Chromium browsers and <code>-P</code> for
+          Firefox. <b>rWebRouter Settings</b> (GTK 4) edits the rules.</p>
+        <ol>
+          <li>Install the .deb: <code>sudo apt install ./rwebrouter_amd64.deb</code></li>
+          <li><b>rWebRouter Settings → General → Make default</b>, or <code>rwebrouter make-default</code>.</li>
+          <li><b>Browsers → Add browser</b> finds installed browsers (deb, snap, flatpak) and their profiles.</li>
+          <li><b>Rules → +</b>, then <b>Test</b> shows the exact command a link would run.</li>
+        </ol>
+      </div>
+      <div class="shots">
+        <div class="window"><img src="media/linux/rules.webp" width="770" height="420" alt="rWebRouter Settings on Linux, Rules tab with four demo rules"></div>
+        <div class="window"><img src="media/linux/test.webp" width="770" height="450" alt="rWebRouter Settings on Linux, Test tab: a work link goes to Chrome – Work with --profile-directory=Profile 1"></div>
+      </div>
+    </div>
+
+    <div id="p-iphone" role="tabpanel" aria-labelledby="tab-iphone" class="platform phone-left" hidden>
+      <div class="iphone-demos">
+        <div class="tabs small" role="tablist" aria-label="iPhone demos"><button role="tab" id="ti-rule" aria-controls="pi-rule" aria-selected="true">Add a rule</button><button role="tab" id="ti-unmatched" aria-controls="pi-unmatched" aria-selected="false" tabindex="-1">No match</button><button role="tab" id="ti-discover" aria-controls="pi-discover" aria-selected="false" tabindex="-1">Browsers</button><button role="tab" id="ti-open-in" aria-controls="pi-open-in" aria-selected="false" tabindex="-1">Open in</button><button role="tab" id="ti-share" aria-controls="pi-share" aria-selected="false" tabindex="-1">Share</button><button role="tab" id="ti-browse" aria-controls="pi-browse" aria-selected="false" tabindex="-1">Browse</button></div>
+          <div id="pi-rule" role="tabpanel" aria-labelledby="ti-rule"><div class="phone"><video data-autoplay muted loop playsinline preload="none" poster="media/ios/ios-rule-editor.webp" width="600" height="1304" aria-label="iPhone: Settings, plus, rule Work for *.work.example, Browser Chrome, Try it shows Applies, Save"><source src="media/ios/ios-rule.mp4" type="video/mp4"></video></div></div>
+          <div id="pi-unmatched" role="tabpanel" aria-labelledby="ti-unmatched" hidden><div class="phone"><video data-autoplay muted loop playsinline preload="none" poster="media/ios/ios-unmatched.webp" width="600" height="1304" aria-label="iPhone: Links that match no rule: switch Open here off, Send to, pick Firefox"><source src="media/ios/ios-unmatched.mp4" type="video/mp4"></video></div></div>
+          <div id="pi-discover" role="tabpanel" aria-labelledby="ti-discover" hidden><div class="phone"><video data-autoplay muted loop playsinline preload="none" poster="media/ios/ios-discovered.webp" width="600" height="1304" aria-label="iPhone: Custom browsers, plus, Discovered on this iPhone: rename Chrome to Chrome (Work), Add, add Firefox"><source src="media/ios/ios-discover.mp4" type="video/mp4"></video></div></div>
+          <div id="pi-open-in" role="tabpanel" aria-labelledby="ti-open-in" hidden><div class="phone"><video data-autoplay muted loop playsinline preload="none" poster="media/ios/ios-open-in.webp" width="600" height="1304" aria-label="iPhone: Open in menu on example.com, the rules pick Firefox, send the page to Chrome"><source src="media/ios/ios-open-in.mp4" type="video/mp4"></video></div></div>
+          <div id="pi-share" role="tabpanel" aria-labelledby="ti-share" hidden><div class="phone"><video data-autoplay muted loop playsinline preload="none" poster="media/ios/ios-share.webp" width="600" height="1304" aria-label="iPhone: Share button, rWebRouter share extension: where the link goes, one button per browser"><source src="media/ios/ios-share.mp4" type="video/mp4"></video></div></div>
+          <div id="pi-browse" role="tabpanel" aria-labelledby="ti-browse" hidden><div class="phone"><video data-autoplay muted loop playsinline preload="none" poster="media/ios/ios-browser.webp" width="600" height="1304" aria-label="iPhone: Address bar: type example.com, Go, the page loads in the app"><source src="media/ios/ios-browse.mp4" type="video/mp4"></video></div></div>
+      </div>
+      <div>
+        <h3>A small browser that routes, for iOS &amp; iPadOS 18+</h3>
+        <p style="color:var(--muted)">On iPhone rWebRouter is a real browser too: pages open right in the app, and
+          rules send chosen sites to Chrome, Firefox, Edge, Brave, DuckDuckGo, Opera or any app you add. Coming soon.</p>
+        <ol>
+          <li><b>Settings → Rules → +</b>: what to match, where to open it, and a live test.</li>
+          <li><b>Links that match no rule</b>: open here, or send them to another browser.</li>
+          <li>Share a link to rWebRouter from any app to route it.</li>
+          <li>Once Apple grants the default-browser entitlement: <b>Settings → Apps → Default Browser App → rWebRouter</b>.</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="howto" class="alt">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">How to</p>
+      <h2>Set it up in five minutes.</h2>
+      <p>The common setups, step by step. Every screen on this page shows demo data only.</p>
+    </div>
+    <div class="howto">
+      <div class="card">
+        <h3>Send work links to a Chrome profile</h3>
+        <ol>
+          <li><b>Browsers → +</b> (Mac) or <b>Add browser</b> (Linux): click <b>Add</b> next to <b>Chrome – Work</b>.</li>
+          <li><b>Rules → +</b>: name it “Work sites”, <b>Applies to</b>, entry <b>Domain and subdomains</b> <code>*.work.example</code>.</li>
+          <li>Add more entries with <b>+</b> (e.g. <b>Host is</b> <code>tickets.example.com</code>); any one matching counts.</li>
+          <li><b>Open in</b>: Chrome – Work. Save.</li>
+        </ol>
+      </div>
+      <div class="card">
+        <h3>Everything else to Firefox</h3>
+        <ol>
+          <li>Right-click the work rule → <b>Add the opposite rule</b> (Mac), or add a rule set to <b>Does not apply to</b> <code>*.work.example</code>.</li>
+          <li><b>Open in</b>: Firefox – Personal. Keep it below the work rule.</li>
+          <li>Or simply set <b>General → Links that match no rule</b> to Firefox.</li>
+        </ol>
+      </div>
+      <div class="card">
+        <h3>Make it the default browser</h3>
+        <ol>
+          <li><b>Mac</b>: Settings → General → Links on this Mac open with → rWebRouter.</li>
+          <li><b>Linux</b>: Settings → General → <b>Make default</b>, or <code>rwebrouter make-default</code>.</li>
+          <li><b>iPhone</b> (when available): Settings → Apps → Default Browser App → rWebRouter.</li>
+        </ol>
+      </div>
+      <div class="card">
+        <h3>Use the same rules everywhere</h3>
+        <ol>
+          <li><b>General → Export…</b> saves <code>router-config.json</code>.</li>
+          <li>Move it by AirDrop, Files, a USB stick or any sync folder.</li>
+          <li><b>General → Import…</b> on the other device. Each platform keeps its own fallback browser in the same file.</li>
+        </ol>
+      </div>
+      <div class="card">
+        <h3>Pick the browser for one link</h3>
+        <ol>
+          <li>On the Mac hold <kbd><span class="mod">⌥</span>Option</kbd> while you click the link.</li>
+          <li>A chooser lists your browsers: press <kbd>1</kbd>…<kbd>9</kbd> or click one; <kbd>Esc</kbd> cancels.</li>
+        </ol>
+      </div>
+      <div class="card">
+        <h3>Check where a link would go</h3>
+        <ol>
+          <li><b>Test</b> tab on Mac and Linux: type a link, see the rule and the browser.</li>
+          <li>On Linux also from a shell: <code>rwebrouter test https://example.com</code>.</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="keyboard">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">Keyboard</p>
+      <h2>Fast from the keyboard.</h2>
+      <p>Shortcuts on the Mac, and a command line on Linux that does everything the settings app does.</p>
+    </div>
+    <div class="tabs" id="key-tabs" role="tablist" aria-label="Keyboard">
+      <button role="tab" id="key-mac" aria-controls="k-mac" aria-selected="true">Mac</button>
+      <button role="tab" id="key-linux" aria-controls="k-linux" aria-selected="false" tabindex="-1">Linux</button>
+    </div>
+    <div id="k-mac" role="tabpanel" aria-labelledby="key-mac" class="kb-layout">
+      <div class="table-scroll">
+        <table class="keys">
+          <thead><tr><th>Keys</th><th>Does</th></tr></thead>
+          <tbody>
+            <tr><td><kbd><span class="mod">⌥</span>Option</kbd> + click a link</td><td>Choose the browser for this link instead of the rules</td></tr>
+            <tr><td><kbd>1</kbd> … <kbd>9</kbd></td><td>In the chooser: open in that browser</td></tr>
+            <tr><td><kbd>Esc</kbd></td><td>Close the chooser, or cancel an editor</td></tr>
+            <tr><td><kbd><span class="mod">⌘</span>,</kbd></td><td>Settings (from the menu-bar menu)</td></tr>
+            <tr><td><kbd><span class="mod">↩</span>Return</kbd></td><td>Save a rule or a browser in its editor</td></tr>
+            <tr><td><kbd><span class="mod">⌘</span>Q</kbd></td><td>Quit rWebRouter (from the menu-bar menu)</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="window menu"><img src="media/mac/menu.webp" width="630" height="448" alt="The menu-bar menu with Settings ⌘, and Quit ⌘Q"></div>
+    </div>
+    <div id="k-linux" role="tabpanel" aria-labelledby="key-linux" class="kb-layout" hidden>
+      <div class="term snippet">
+        <div class="bar"><i></i><i></i><i></i></div>
+<pre><span class="p">$ </span><span class="c">rwebrouter test https://jira.work.example/browse/ABC-1</span>
+<span class="o">Chrome – Work (rule "Work sites")
+  google-chrome-stable --profile-directory=Profile 1 https://jira.work.example/browse/ABC-1</span>
+<span class="p">$ </span><span class="c">rwebrouter test https://news.example.net</span>
+<span class="o">Firefox – Personal (rule "Everything else")
+  firefox -P Personal https://news.example.net</span>
+<span class="p">$ </span><span class="c">rwebrouter discover</span>
+<span class="o">Firefox – Personal [firefox.desktop]
+Google Chrome – Work (Profile 1, me@work.example) [google-chrome.desktop]</span></pre>
+      </div>
+      <div class="table-scroll">
+        <table class="keys">
+          <thead><tr><th>Command</th><th>Does</th></tr></thead>
+          <tbody>
+            <tr><td><code>rwebrouter &lt;url&gt;</code></td><td>Route the link and open it</td></tr>
+            <tr><td><code>rwebrouter test &lt;url&gt;</code></td><td>Where it would go, and the exact command</td></tr>
+            <tr><td><code>rwebrouter discover</code></td><td>Installed browsers and profiles</td></tr>
+            <tr><td><code>rwebrouter validate</code></td><td>Problems in the config</td></tr>
+            <tr><td><code>rwebrouter make-default</code></td><td>Become the default browser</td></tr>
+            <tr><td><code>rwebrouter</code></td><td>Open rWebRouter Settings</td></tr>
+          </tbody>
+        </table>
+        <p style="color:var(--muted);font-size:14px">Every command takes <code>--json</code>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">Compare</p>
+      <h2>The same rules, built for each platform.</h2>
+    </div>
+    <div class="table-scroll">
+      <table class="compare">
+        <thead><tr><th></th><th>iPhone</th><th>Mac</th><th>Linux</th></tr></thead>
+        <tbody>
+          <tr><td>Ordered rules, Applies to / Does not apply to</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+          <tr><td>Host, domain, wildcard, contains, regex entries</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+          <tr><td>Chrome / Edge / Brave / Firefox profiles</td><td class="no">–</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+          <tr><td>Finds installed browsers</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓<small>deb, snap, flatpak</small></td></tr>
+          <tr><td>Built-in browser for links that match no rule</td><td class="yes">✓</td><td class="no">–</td><td class="no">–</td></tr>
+          <tr><td>Pick the browser per link</td><td class="yes">✓<small>Open in</small></td><td class="yes">✓<small>⌥ + click</small></td><td class="no">–</td></tr>
+          <tr><td>Command line</td><td class="no">–</td><td class="no">–</td><td class="yes">✓</td></tr>
+          <tr><td>Import / export the same JSON</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+          <tr><td>Default browser</td><td class="no">pending Apple<small>entitlement requested</small></td><td class="yes">✓</td><td class="yes">✓</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="download">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">Download</p>
+      <h2>Free, no account.</h2>
+      <p>Mac and Linux downloads are coming soon; the iPhone app too.</p>
+    </div>
+    <div class="downloads">
+      <div class="card">
+        <h3>Mac · 1.0.0</h3>
+        <p class="note">macOS 15 or later, Apple silicon and Intel. Not notarized yet: the first time, open it from
+          System Settings → Privacy &amp; Security → <b>Open Anyway</b>, or run
+          <code>xattr -dr com.apple.quarantine /Applications/rWebRouter.app</code>.</p>
+        <button class="btn" type="button" disabled aria-disabled="true">Coming soon</button>
+      </div>
+      <div class="card">
+        <h3>Linux · 1.0.0</h3>
+        <p class="note">Ubuntu 24.04, Debian 13 or newer, amd64. Needs GTK 4 and libadwaita for the settings app.</p>
+        <div class="term snippet"><pre><span class="p">$ </span><span class="c">sudo apt install ./rwebrouter_amd64.deb</span>
+<span class="p">$ </span><span class="c">rwebrouter make-default</span></pre></div>
+        <button class="btn" type="button" disabled aria-disabled="true">Coming soon</button>
+      </div>
+      <div class="card">
+        <h3>iPhone</h3>
+        <p class="note">iOS &amp; iPadOS 18 or later.</p>
+        <button class="btn" type="button" disabled aria-disabled="true">Coming soon</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq" class="alt">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">FAQ</p>
+      <h2>Questions.</h2>
+    </div>
+    <div class="faq">
+      <details><summary>Can rWebRouter be the default browser on iPhone?</summary>
+        <div><p>Only apps Apple grants the default-browser entitlement can be picked under Settings → Apps → Default
+          Browser App. rWebRouter has requested it. Until then you can share links to it, or open them in it.</p></div></details>
+      <details><summary>When is the iPhone app available?</summary>
+        <div><p>Coming soon.</p></div></details>
+      <details><summary>Is the Mac app a browser?</summary>
+        <div><p>No. On the Mac it is a menu-bar app with no window: it receives links as the default browser and
+          passes each one to the browser your rules choose. Settings opens from the menu-bar icon or with <kbd><span class="mod">⌘</span>,</kbd>.</p></div></details>
+      <details><summary>Why does macOS say it cannot check the app?</summary>
+        <div><p>The Mac build is ad-hoc signed and not notarized yet. Open it once from System Settings → Privacy &amp;
+          Security → Open Anyway, or remove the quarantine flag with <code>xattr -dr com.apple.quarantine /Applications/rWebRouter.app</code>.</p></div></details>
+      <details><summary>Which Linux systems are supported?</summary>
+        <div><p>The .deb is for amd64 Ubuntu 24.04, Debian 13 and newer (it needs GTK 4 and libadwaita for the
+          settings app). Browsers installed as deb, snap or flatpak are found. Other packages are not built yet.</p></div></details>
+      <details><summary>Which browsers and profiles work?</summary>
+        <div><p>Chrome, Chromium, Edge, Brave, Vivaldi, Firefox, Safari, Opera, Zen and Arc, depending on the platform,
+          plus any app that opens web links. Chrome, Edge, Brave and Vivaldi profiles and Firefox profiles are found automatically.</p></div></details>
+      <details><summary>Does rWebRouter send my links anywhere?</summary>
+        <div><p>No. There is no account and no server: rules and recent links stay on your device, and a link only ever
+          goes to the browser you route it to. See the <a href="privacy.html">privacy policy</a>.</p></div></details>
+      <details><summary>How do I move my rules to another device?</summary>
+        <div><p>General → Export… writes one JSON file; General → Import… on the other device reads it. iPhone, Mac and
+          Linux use the same format.</p></div></details>
+    </div>
+  </div>
+</section>
+
+<section class="closing">
+  <div class="wrap">
+    <h2>Stop copying links between browsers.</h2>
+    <p style="color:var(--muted);font-size:18px;margin:0">Set your rules once; every link finds its browser.</p>
+    <div class="cta">
+      <a class="btn primary" href="#how">See how it works</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a class="brand" href="#"><img src="media/icon.png" alt="" width="28" height="28">rWebRouter</a>
+        <p>Every link opens in the right browser.</p>
+      </div>
+      <div><h4>Product</h4><ul><li><a href="#how">How it works</a></li><li><a href="#howto">How to</a></li><li><a href="#keyboard">Keyboard</a></li><li><a href="#faq">FAQ</a></li></ul></div>
+      <div><h4>Download</h4><ul><li>Mac: coming soon</li><li>Linux (.deb): coming soon</li><li>iPhone: coming soon</li></ul></div>
+      <div><h4>About</h4><ul><li><a href="privacy.html">Privacy</a></li></ul></div>
+    </div>
+    <p class="fine">Screens show demo data only (example.com, *.work.example). No cookies; this page counts visits anonymously.</p>
+  </div>
+</footer>
+<script src="main.js?v=3" defer></script>
+</body>
+</html>
