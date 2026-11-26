@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>rWebRouter · privacy policy</title>
-<link rel="canonical" href="https://webrouter.radut.dev/privacy.html">
+<link rel="canonical" href="https://radut.github.io/rwebrouter/privacy.html">
 <meta name="color-scheme" content="dark light">
 <link rel="icon" href="favicon.png" type="image/png">
 <link rel="stylesheet" href="style.css?v=3">
 <script>try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
-<style>.doc{max-width:46rem;padding:48px 0 64px}.doc h1{font-size:clamp(28px,4vw,40px);margin:0 0 8px}.doc h2{font-size:22px;margin:32px 0 8px}.doc p,.doc li{color:var(--muted)}</style>
+<style>.doc{max-width:46rem;padding:48px 0 64px}.doc h1{font-size:clamp(28px,4vw,40px);margin:0 0 8px}.doc h2{font-size:22px;margin:32px 0 8px}.doc p,.doc li{color:var(--muted)}.legal{display:flex;gap:16px;flex-wrap:wrap}</style>
 <script defer src="https://cloud.umami.is/script.js" data-website-id="c5b8f3b9-dc89-4e42-afc2-06ee72310179"></script></head>
 <body>
 <header class="top"><div class="wrap"><a class="brand" href="./"><img src="media/icon.png" alt="" width="28" height="28">rWebRouter</a></div></header>
@@ -17,21 +17,54 @@
 <h1>rWebRouter privacy policy</h1>
 <p>Last updated: 26 November 2026.</p>
 
+<h2>Who is responsible</h2>
+<p>rWebRouter and this website are made by Radu Toader, the developer named on the App Store, who is the controller for
+the website data described below. Contact: open an issue at <a href="https://github.com/radut/rwebrouter/issues">github.com/radut/rwebrouter/issues</a>
+(see <a href="support.html">Support</a>).</p>
+
 <h2>The apps</h2>
 <p>rWebRouter opens links itself (on iPhone) or passes them to another browser you choose, using rules you set. This
 applies to the iPhone, Mac and Linux apps.</p>
 <ul>
-<li>They collect no personal data. There are no accounts, analytics, ads or trackers, and no server of ours.</li>
+<li>The apps collect no personal data. There are no accounts, analytics, ads or trackers, and no server of ours; the
+apps send nothing to us.</li>
 <li>Your rules, settings and the list of recent links are stored only on your device.</li>
-<li>Web pages are loaded directly from the sites you visit; those sites' own privacy policies apply.</li>
+<li>Web pages are loaded directly from the sites you visit; those sites' own privacy policies apply. On iPhone, the
+built-in browser keeps cookies and site data on your device, like any browser.</li>
+<li>Text typed in the iPhone address bar that is not a web address is sent to Google search, the default search
+engine; Google's privacy policy applies to those searches.</li>
 <li>When a rule sends a link to another browser, the link is handed to that app on your device.</li>
+<li>On Mac and Linux the app reads the profile lists of the browsers installed on your computer (Chrome's and other
+Chromium browsers' <code>Local State</code> file, Firefox's <code>profiles.ini</code>: profile names and the account
+email shown there) to offer them as targets. This is read on your device only and is never sent anywhere.</li>
 <li>On iPhone, passwords and passkeys are handled by iOS AutoFill and your chosen password manager, never by the app.</li>
+<li>To delete everything the app stored, delete the app (on Mac and Linux, also its configuration file). Nothing is
+kept anywhere else.</li>
 </ul>
 
 <h2>This website</h2>
-<p>This website sets no cookies. It counts visits anonymously (page views, referrer, browser type and country, no
-personal identifiers) to see which pages are read.</p>
+<ul>
+<li>This website sets no cookies. The light/dark theme you pick is kept in your browser's local storage only.</li>
+<li>Visits are counted with <a href="https://umami.is/privacy">Umami Cloud</a> (Umami Software, Inc., United States):
+page views, referrer, browser, device type and country. Umami uses your IP address briefly to derive the country and a
+visitor hash that changes over time, and does not store the IP address with the statistics; its providers may keep it
+in server logs. The data is pseudonymous, not tied to a name, and is used only to see which pages are read. Legal
+basis: legitimate interest (GDPR Art. 6(1)(f)). The data is processed in the United States under Umami's data
+processing agreement.</li>
+<li>The site is served by Cloudflare, Inc. and copied to GitHub Pages (GitHub, Inc.) and GitLab Pages (GitLab Inc.);
+like any web host, they process your IP address and request details in their logs to deliver and protect the site.</li>
+</ul>
 
+<h2>Your rights</h2>
+<p>You can ask for access to, correction or deletion of data about you, object to the analytics, and complain to your
+data protection authority. Because the website keeps no data that identifies you, there is usually nothing we can find
+for a request, but ask through the contact above. Blocking <code>cloud.umami.is</code> in your browser stops the counting.</p>
 </main>
+<footer>
+  <div class="wrap">
+    <p class="legal"><a href="./">Home</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="support.html">Support</a></p>
+    <p class="fine">© 2026 Radu Toader. Chrome is a trademark of Google LLC. Firefox is a trademark of the Mozilla Foundation in the U.S. and other countries. Safari is a trademark of Apple Inc., registered in the U.S. and other countries. Microsoft Edge is a trademark of the Microsoft group of companies. Brave, Vivaldi, Opera, DuckDuckGo, Zen and Arc are trademarks of their respective owners. rWebRouter is an independent app and is not affiliated with, endorsed or sponsored by any of them.</p>
+  </div>
+</footer>
 </body>
 </html>
