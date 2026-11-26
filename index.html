@@ -12,7 +12,7 @@
 <meta property="og:description" content="Every link opens in the right browser and profile, on iPhone, Mac and Linux.">
 <meta property="og:image" content="https://radut.github.io/rwebrouter/media/mac/rules.webp">
 <link rel="icon" href="favicon.png" type="image/png">
-<link rel="stylesheet" href="style.css?v=3">
+<link rel="stylesheet" href="style.css?v=4">
 <script>try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
 </head>
 <body>
@@ -22,6 +22,7 @@
     <a class="brand" href="#"><img src="media/icon.png" alt="" width="28" height="28">rWebRouter</a>
     <nav class="nav" aria-label="Sections">
       <a href="#how">How it works</a>
+      <a href="#ask">Ask every time</a>
       <a href="#platforms">Platforms</a>
       <a href="#howto">How to</a>
       <a href="#keyboard">Keyboard</a>
@@ -35,13 +36,13 @@
 <main>
 <section class="hero">
   <div class="wrap">
-    <span class="eyebrow"><b>●</b> Version 1.0.0 · Mac and Linux now · iPhone coming soon</span>
+    <span class="eyebrow"><b>●</b> Version 1.1.0 · New: Ask every time · Mac and Linux now · iPhone coming soon</span>
     <h1>Every link opens in <span>the right browser.</span></h1>
     <p class="lede">rWebRouter is the default browser that is not a browser: ordered rules send each link to the
       browser, or the Chrome or Firefox profile, it belongs in. One config file for iPhone, Mac and Linux.</p>
     <div class="cta">
-      <a class="btn primary" href="https://github.com/radut/rwebrouter/releases/download/v1.0.0/rWebRouter-1.0.0-mac.zip">Download for Mac</a>
-      <a class="btn primary" href="https://github.com/radut/rwebrouter/releases/download/v1.0.0/rwebrouter_1.0.0_amd64.deb">Download for Linux (.deb)</a>
+      <a class="btn primary" href="https://github.com/radut/rwebrouter/releases/download/v1.1.0/rWebRouter-1.1.0-mac.zip">Download for Mac</a>
+      <a class="btn primary" href="https://github.com/radut/rwebrouter/releases/download/v1.1.0/rwebrouter_1.1.0_amd64.deb">Download for Linux (.deb)</a>
       <button class="btn" type="button" disabled aria-disabled="true">iPhone · Coming soon</button>
     </div>
     <p class="platforms">macOS 15+ · Ubuntu 24.04 / Debian 13 (amd64) · iOS &amp; iPadOS 18+ · <a href="https://github.com/radut/rwebrouter/releases">All releases</a></p>
@@ -136,6 +137,47 @@
   </div>
 </section>
 
+<section id="ask">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">New in 1.1.0</p>
+      <h2>Ask every time.</h2>
+      <p>Some links have no single right browser. Set a rule, or the links that match no rule, to <b>Ask every
+        time</b> and a small popup lists every browser, or only the browsers and profiles you picked, each under a name
+        of your own and in your order.</p>
+    </div>
+    <div class="platform phone-left">
+      <div>
+        <div class="tabs small" id="ask-tabs" role="tablist" aria-label="Ask every time on each platform"><button role="tab" id="ta-iphone" aria-controls="pa-iphone" aria-selected="true">iPhone</button><button role="tab" id="ta-mac" aria-controls="pa-mac" aria-selected="false" tabindex="-1">Mac</button><button role="tab" id="ta-linux" aria-controls="pa-linux" aria-selected="false" tabindex="-1">Linux</button></div>
+        <div id="pa-iphone" role="tabpanel" aria-labelledby="ta-iphone"><div class="phone"><video data-autoplay muted loop playsinline preload="none" poster="media/ios/ios-ask.v3.webp" width="600" height="1304" aria-label="iPhone: a wiki.work.example link shows Open link with Chrome – Work, Firefox, Edge – Personal and Open here; Chrome – Work is picked; then the rule Work set to Ask every time in Settings"><source src="media/ios/ios-ask.v3.mp4" type="video/mp4"></video></div></div>
+        <div id="pa-mac" role="tabpanel" aria-labelledby="ta-mac" hidden><div class="window narrow"><img src="media/mac/chooser.v3.webp" width="680" height="466" loading="lazy" alt="Mac: the Ask every time popup for a wiki.work.example link: 1 Chrome – Work, 2 Chrome – Personal, 3 Firefox – Private, 4 Safari, with keys 1–9, arrows, Return, Esc and ⌘C"></div></div>
+        <div id="pa-linux" role="tabpanel" aria-labelledby="ta-linux" hidden><div class="window narrow"><img src="media/linux/chooser.v3.webp" width="420" height="355" loading="lazy" alt="Linux: Open link with, rule Work tickets: 1 Chrome – Work, 2 Chrome – Personal, 3 Firefox – Private, 4 Edge (not installed)"></div></div>
+      </div>
+      <div>
+        <h3>Pick the browser, or the profile, for each link</h3>
+        <ol>
+          <li><b>Rules → +</b> (or edit a rule): set the browser to <b>Ask every time</b>. For links that match no
+            rule: <b>General → Links that match no rule → Ask every time</b>.</li>
+          <li>Choose <b>All browsers</b>, or <b>Only these</b> and add the browsers and profiles to offer.</li>
+          <li>Rename a line (“Work”, “Personal”) and drag to reorder.</li>
+          <li>Click a link: the popup opens (on the Mac at the pointer). Press a number, or click.</li>
+        </ol>
+        <div class="table-scroll">
+          <table class="keys">
+            <thead><tr><th>Keys in the popup</th><th>Does</th></tr></thead>
+            <tbody>
+              <tr><td><kbd>1</kbd> … <kbd>9</kbd></td><td>Open in that line's browser</td></tr>
+              <tr><td><kbd>↑</kbd> <kbd>↓</kbd> then <kbd><span class="mod">↩</span>Return</kbd></td><td>Move, then open the selected line</td></tr>
+              <tr><td><kbd>Esc</kbd></td><td>Close the popup and open nothing</td></tr>
+              <tr><td><kbd><span class="mod">⌘</span>C</kbd> Mac · <kbd>Ctrl</kbd> + <kbd>C</kbd> Linux</td><td>Copy the link instead</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="platforms">
   <div class="wrap">
     <div class="section-head">
@@ -177,7 +219,7 @@
           browser the rules choose, with <code>--profile-directory</code> for Chromium browsers and <code>-P</code> for
           Firefox. <b>rWebRouter Settings</b> (GTK 4) edits the rules.</p>
         <ol>
-          <li>Install the .deb: <code>sudo apt install ./rwebrouter_1.0.0_amd64.deb</code></li>
+          <li>Install the .deb: <code>sudo apt install ./rwebrouter_1.1.0_amd64.deb</code></li>
           <li><b>rWebRouter Settings → General → Make default</b>, or <code>rwebrouter make-default</code>.</li>
           <li><b>Browsers → Add browser</b> finds installed browsers (deb, snap, flatpak) and their profiles.</li>
           <li><b>Rules → +</b>, then <b>Test</b> shows the exact command a link would run.</li>
@@ -291,6 +333,8 @@
           <tbody>
             <tr><td><kbd><span class="mod">⌥</span>Option</kbd> + click a link</td><td>Choose the browser for this link instead of the rules</td></tr>
             <tr><td><kbd>1</kbd> … <kbd>9</kbd></td><td>In the chooser: open in that browser</td></tr>
+            <tr><td><kbd>↑</kbd> <kbd>↓</kbd> <kbd><span class="mod">↩</span>Return</kbd></td><td>In the chooser: move and open the selected browser</td></tr>
+            <tr><td><kbd><span class="mod">⌘</span>C</kbd></td><td>In the chooser: copy the link</td></tr>
             <tr><td><kbd>Esc</kbd></td><td>Close the chooser, or cancel an editor</td></tr>
             <tr><td><kbd><span class="mod">⌘</span>,</kbd></td><td>Settings (from the menu-bar menu)</td></tr>
             <tr><td><kbd><span class="mod">↩</span>Return</kbd></td><td>Save a rule or a browser in its editor</td></tr>
@@ -365,17 +409,17 @@ Google Chrome – Work (Profile 1, me@work.example) [google-chrome.desktop]</spa
     </div>
     <div class="downloads">
       <div class="card">
-        <h3>Mac · 1.0.0</h3>
+        <h3>Mac · 1.1.0</h3>
         <p class="note">macOS 15 or later, Apple silicon and Intel. Signed with Developer ID and notarized by Apple:
           open the zip, move rWebRouter to Applications and start it.</p>
-        <a class="btn primary" href="https://github.com/radut/rwebrouter/releases/download/v1.0.0/rWebRouter-1.0.0-mac.zip">Download for Mac (.zip)</a>
+        <a class="btn primary" href="https://github.com/radut/rwebrouter/releases/download/v1.1.0/rWebRouter-1.1.0-mac.zip">Download for Mac (.zip)</a>
       </div>
       <div class="card">
-        <h3>Linux · 1.0.0</h3>
+        <h3>Linux · 1.1.0</h3>
         <p class="note">Ubuntu 24.04, Debian 13 or newer, amd64. Needs GTK 4 and libadwaita for the settings app.</p>
-        <div class="term snippet"><pre><span class="p">$ </span><span class="c">sudo apt install ./rwebrouter_1.0.0_amd64.deb</span>
+        <div class="term snippet"><pre><span class="p">$ </span><span class="c">sudo apt install ./rwebrouter_1.1.0_amd64.deb</span>
 <span class="p">$ </span><span class="c">rwebrouter make-default</span></pre></div>
-        <a class="btn primary" href="https://github.com/radut/rwebrouter/releases/download/v1.0.0/rwebrouter_1.0.0_amd64.deb">Download for Linux (.deb)</a>
+        <a class="btn primary" href="https://github.com/radut/rwebrouter/releases/download/v1.1.0/rwebrouter_1.1.0_amd64.deb">Download for Linux (.deb)</a>
       </div>
       <div class="card">
         <h3>iPhone</h3>
@@ -398,6 +442,12 @@ Google Chrome – Work (Profile 1, me@work.example) [google-chrome.desktop]</spa
           Browser App. rWebRouter has requested it. Until then you can share links to it, or open them in it.</p></div></details>
       <details><summary>When is the iPhone app available?</summary>
         <div><p>Coming soon.</p></div></details>
+      <details><summary>Can rWebRouter ask which browser to use?</summary>
+        <div><p>Yes, since 1.1.0. Set a rule's browser, or the one for links that match no rule, to <b>Ask every
+          time</b>: a popup lists all browsers or only the ones you chose, under your own names. Press
+          <kbd>1</kbd>…<kbd>9</kbd>, or <kbd>↑</kbd> <kbd>↓</kbd> and <kbd><span class="mod">↩</span>Return</kbd>;
+          <kbd>Esc</kbd> opens nothing. On iPhone the list is a sheet with an <em>Open here</em> line. On Linux without
+          a display the link opens in your Linux default.</p></div></details>
       <details><summary>Is the Mac app a browser?</summary>
         <div><p>No. On the Mac it is a menu-bar app with no window: it receives links as the default browser and
           passes each one to the browser your rules choose. Settings opens from the menu-bar icon or with <kbd><span class="mod">⌘</span>,</kbd>.</p></div></details>
@@ -439,14 +489,14 @@ Google Chrome – Work (Profile 1, me@work.example) [google-chrome.desktop]</spa
         <a class="brand" href="#"><img src="media/icon.png" alt="" width="28" height="28">rWebRouter</a>
         <p>Every link opens in the right browser.</p>
       </div>
-      <div><h4>Product</h4><ul><li><a href="#how">How it works</a></li><li><a href="#howto">How to</a></li><li><a href="#keyboard">Keyboard</a></li><li><a href="#faq">FAQ</a></li></ul></div>
-      <div><h4>Download</h4><ul><li><a href="https://github.com/radut/rwebrouter/releases/download/v1.0.0/rWebRouter-1.0.0-mac.zip">Mac</a></li><li><a href="https://github.com/radut/rwebrouter/releases/download/v1.0.0/rwebrouter_1.0.0_amd64.deb">Linux (.deb)</a></li><li>iPhone: coming soon</li><li><a href="https://github.com/radut/rwebrouter/releases">All releases</a></li></ul></div>
+      <div><h4>Product</h4><ul><li><a href="#how">How it works</a></li><li><a href="#ask">Ask every time</a></li><li><a href="#howto">How to</a></li><li><a href="#keyboard">Keyboard</a></li><li><a href="#faq">FAQ</a></li></ul></div>
+      <div><h4>Download</h4><ul><li><a href="https://github.com/radut/rwebrouter/releases/download/v1.1.0/rWebRouter-1.1.0-mac.zip">Mac</a></li><li><a href="https://github.com/radut/rwebrouter/releases/download/v1.1.0/rwebrouter_1.1.0_amd64.deb">Linux (.deb)</a></li><li>iPhone: coming soon</li><li><a href="https://github.com/radut/rwebrouter/releases">All releases</a></li></ul></div>
       <div><h4>About</h4><ul><li><a href="privacy.html">Privacy</a></li><li><a href="terms.html">Terms</a></li><li><a href="support.html">Support</a></li></ul></div>
     </div>
     <p class="fine">Screens show demo data only (example.com, *.work.example). This website tracks nothing: no analytics, no cookies (see <a href="privacy.html">Privacy</a>).</p>
     <p class="fine">© 2026 Radu Toader. Chrome is a trademark of Google LLC. Firefox is a trademark of the Mozilla Foundation in the U.S. and other countries. Safari is a trademark of Apple Inc., registered in the U.S. and other countries. Microsoft Edge is a trademark of the Microsoft group of companies. Brave, Vivaldi, Opera, DuckDuckGo, Zen and Arc are trademarks of their respective owners. rWebRouter is an independent app and is not affiliated with, endorsed or sponsored by any of them.</p>
   </div>
 </footer>
-<script src="main.js?v=3" defer></script>
+<script src="main.js?v=4" defer></script>
 </body>
 </html>
