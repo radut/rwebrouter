@@ -45,7 +45,7 @@
       <a class="btn primary" href="https://github.com/radut/rwebrouter/releases/download/v1.0.0/rwebrouter_1.0.0_amd64.deb">Download for Linux (.deb)</a>
       <button class="btn" type="button" disabled aria-disabled="true">iPhone · Coming soon</button>
     </div>
-    <p class="platforms">macOS 15+ · Ubuntu 24.04 / Debian 13 (amd64) · iOS &amp; iPadOS 18+ · <a href="https://github.com/radut/rwebrouter/releases">All releases</a></p>
+    <p class="platforms">macOS 15+ · Ubuntu 24.04 / Debian 13 (amd64) · other Linux (AppImage) · iOS &amp; iPadOS 18+ · <a href="https://github.com/radut/rwebrouter/releases">All releases</a></p>
 
     <div class="stage">
       <div class="stage-media">
@@ -219,7 +219,8 @@
           browser the rules choose, with <code>--profile-directory</code> for Chromium browsers and <code>-P</code> for
           Firefox. <b>rWebRouter Settings</b> (GTK 4) edits the rules.</p>
         <ol>
-          <li>Install the .deb: <code>sudo apt install ./rwebrouter_1.0.0_amd64.deb</code></li>
+          <li>Install the .deb: <code>sudo apt install ./rwebrouter_1.0.0_amd64.deb</code>. Other distributions: run the
+            <a href="https://github.com/radut/rwebrouter/releases/download/v1.0.0/rWebRouter-1.0.0-x86_64.AppImage">AppImage</a> (<code>chmod +x</code>, no install); it adds itself to the app menu.</li>
           <li><b>rWebRouter Settings → General → Make default</b>, or <code>rwebrouter make-default</code>.</li>
           <li><b>Browsers → Add browser</b> finds installed browsers (deb, snap, flatpak) and their profiles.</li>
           <li><b>Rules → +</b>, then <b>Test</b> shows the exact command a link would run.</li>
@@ -420,6 +421,9 @@ Google Chrome – Work (Profile 1, me@work.example) [google-chrome.desktop]</spa
         <div class="term snippet"><pre><span class="p">$ </span><span class="c">sudo apt install ./rwebrouter_1.0.0_amd64.deb</span>
 <span class="p">$ </span><span class="c">rwebrouter make-default</span></pre></div>
         <a class="btn primary" href="https://github.com/radut/rwebrouter/releases/download/v1.0.0/rwebrouter_1.0.0_amd64.deb">Download for Linux (.deb)</a>
+        <p class="note">Fedora, Arch, openSUSE and other x86_64 distributions: the AppImage, no install
+          (<code>chmod +x</code> and run it). The settings window uses the system's GTK 4 and libadwaita for Python.</p>
+        <a class="btn" href="https://github.com/radut/rwebrouter/releases/download/v1.0.0/rWebRouter-1.0.0-x86_64.AppImage">Download AppImage (x86_64)</a>
       </div>
       <div class="card">
         <h3>iPhone</h3>
@@ -455,8 +459,9 @@ Google Chrome – Work (Profile 1, me@work.example) [google-chrome.desktop]</spa
         <div><p>Yes. The Mac download is signed with Developer ID and notarized by Apple, so it opens like any other app
           from the internet. Each release lists SHA-256 checksums in <code>SHA256SUMS</code>.</p></div></details>
       <details><summary>Which Linux systems are supported?</summary>
-        <div><p>The .deb is for amd64 Ubuntu 24.04, Debian 13 and newer (it needs GTK 4 and libadwaita for the
-          settings app). Browsers installed as deb, snap or flatpak are found. Other packages are not built yet.</p></div></details>
+        <div><p>The .deb is for amd64 Ubuntu 24.04, Debian 13 and newer; the AppImage runs on other x86_64 distributions
+          such as Fedora and Arch. The settings app needs GTK 4 and libadwaita. Browsers installed as deb, snap or flatpak
+          are found. arm64, rpm and flatpak packages are not built yet.</p></div></details>
       <details><summary>Which browsers and profiles work?</summary>
         <div><p>Chrome, Chromium, Edge, Brave, Vivaldi, Firefox, Safari, Opera, Zen and Arc, depending on the platform,
           plus any app that opens web links. Chrome, Edge, Brave and Vivaldi profiles and Firefox profiles are found automatically.</p></div></details>
